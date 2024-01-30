@@ -11,6 +11,8 @@ const session = require("express-session");
 // const cors = require('cors');
 
 app.set("view engine", "hbs");
+app.set('views', path.join(__dirname, 'views'));
+
 require("dotenv").config();
 
 // --> Middlewares
