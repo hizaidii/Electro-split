@@ -1,0 +1,172 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>electro|split</title>
+    <link rel="shortcut icon" href="/Assets/lightning-icon-original.svg" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="/css/style.css" />
+    
+  </head>
+  <body>
+    {{> navbar }}
+
+    <form class="indexForm" action="/addNewCycle" method="post">
+
+      <div class="parentContainer">
+
+        <div class="leftContainer">
+          {{! Specify Current Cycle }}
+          <div class="dateContainer container">
+            <div class="title">
+
+              <h1 class="heading1">Specify Current Cycle 🗓️</h1>
+
+              <p class="subtext">Current cycle always starts from the end of previous cycle. For ease of use always try to log cycles at the end of month.</p>
+
+            </div>
+
+            <div class="bothDates">
+              <div class="oneDate">
+                <h2 class="heading2">Start Date of Current Cycle</h2>
+                <div class="disabledInput input dateInput"><p class="inputText">{{formatDate currentCycleData.startDate}}</p></div>
+              </div>
+              <div class="oneDate">
+                <h2 class="heading2">End Date of Current Cycle</h2>
+                <input class="cycleInput input dateInput dateiPhone" type="date" name="endDate" placeholder="Write date here" required/>
+              </div>
+            </div>
+
+          </div>
+
+          {{! Total Amount Consumed }}
+          <div class="amountContainer container">
+            <div class="title">
+              <h1 class="heading1">Total Amount Consumed 💰</h1>
+              <p class="subtext">Enter the following amounts incurred during this cycle. Check the UPPCL app for exact figures.</p>
+            </div>
+
+            <h2 class="heading2 amounts-small-heading">Amount from UPPCL App</h2>
+            <div class="allAmountInputs">
+              <div class="oneAmountInput">
+                <h2 class="heading2">Grid Amount Consumed</h2>
+                <div class="currency-wrap">
+                  <span class="currency-code">₹</span>
+                  <input class="cycleInput input amountInput text-currency" type="number" name="gridAmountConsumed" placeholder="" required/>
+                </div>
+              </div>
+              <div class="oneAmountInput">
+                <h2 class="heading2">Total VCAP</h2>
+                <div class="currency-wrap">
+                  <span class="currency-code">₹</span>
+                  <input class="cycleInput input amountInput text-currency" type="number" name="totalVCAP" placeholder="" required/>
+                </div>
+              </div>
+              <div class="oneAmountInput">
+                <h2 class="heading2">Grid Fixed Charges</h2>
+                <div class="currency-wrap">
+                  <span class="currency-code">₹</span>
+                  <input class="cycleInput input amountInput text-currency" type="number" name="gridFixedCharges" placeholder="" required/>
+                </div>
+              </div>
+              <div class="oneAmountInput">
+                <h2 class="heading2">Total Amount Consumed</h2>
+                <div class="currency-wrap">
+                  <span class="currency-code">₹</span>
+                  {{!-- disabled field that shows value --}}
+                  <div class="disabledInput input amountInput2 text-currency"><p class="inputText totalAmt">0</p></div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        {{! Individual units consumed }}
+        <div class="unitContainer container">
+          <div class="title">
+            <h1 class="heading1">Individual Units Consumed 💡</h1>
+            <p class="subtext">Enter the units consumed for each room, during this cycle. Initial meter reading always stays the same as final meter reading for previous cycle, Check the meter reading for exact figures.</p>
+          </div>
+
+          <div class="unitsInputTitles">
+            <div class="ghostbox"></div>
+            <h2 class="heading2 units-small-heading">Initial Meter Reading</h2>
+            <h2 class="heading2 units-small-heading">Final Meter Reading</h2>
+              {{!-- for media query --}}
+            <h2 class="heading2 units-small-heading2">Initial Reading</h2>
+            <h2 class="heading2 units-small-heading2">Final Reading</h2>
+          </div>
+
+          <div class="addUnitsInputs">
+            <div class="oneUnitInput" id="person1">
+              <h2 class="heading2">{{currentCycleData.p1name}}</h2>
+
+              <div class="person1Readings personReadings">
+                <div class="disabledInput input unitInput"><p class="inputText">{{currentCycleData.p1InitialMeter}}</p></div>
+                <input class="cycleInput input unitInput" type="number" name="p1FinalMeter" placeholder="" required/>
+              </div>
+
+            </div>
+
+            <div class="oneUnitInput" id="person2">
+              <h2 class="heading2">{{currentCycleData.p2name}}</h2>
+
+              <div class="person2Readings personReadings">
+                <div class="disabledInput input unitInput"><p class="inputText">{{currentCycleData.p2InitialMeter}}</p></div>
+                <input class="cycleInput input unitInput" type="number" name="p2FinalMeter" placeholder="" required/>
+              </div>
+
+            </div>
+
+            <div class="oneUnitInput" id="person3">
+              <h2 class="heading2">{{currentCycleData.p3name}}</h2>
+
+              <div class="person3Readings personReadings">
+                <div class="disabledInput input unitInput"><p class="inputText">{{currentCycleData.p3InitialMeter}}</p></div>
+                <input class="cycleInput input unitInput" type="number" name="p3FinalMeter" placeholder="" required/>
+              </div>
+
+            </div>
+
+            <div class="oneUnitInput" id="person4">
+              <h2 class="heading2">{{currentCycleData.p4name}}</h2>
+
+              <div class="person4Readings personReadings">
+                <div class="disabledInput input unitInput"><p class="inputText">{{currentCycleData.p4InitialMeter}}</p></div>
+                <input class="cycleInput input unitInput" type="number" name="p4FinalMeter" placeholder="" required/>
+              </div>
+
+            </div>
+
+          </div>
+
+          {{! Total units consumed }}
+          <div class="title total-units-title-container">
+            <h1 class="heading1">Total Units Consumed</h1>
+            <p class="subtext">Enter the ‘Grid Units Consumed’ during this cycle. Check the UPPCL app for the exact figure.</p>
+          </div>
+
+          <h2 class="heading2 grid-units-small-heading">Units from UPPCL App</h2>
+          <div class="oneUnitInput">
+            <h2 class="heading2">Grid Units Consumed</h2>
+
+            <div class="personReadings">
+              <input class="cycleInput input unitInput" type="number" name="gridUnitsConsumed" placeholder="" required/>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <button type="submit" class="submitBtn">Submit this cycle</button>
+
+    </form>
+
+    {{> footer }}
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

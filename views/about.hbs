@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>electro|split</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/about.css" />
+        <link rel="shortcut icon" href="/Assets/lightning-icon-original.svg" type="image/x-icon" />
+  </head>
+  <body>
+    {{> navbar}}
+
+    <div class="howContainer container">
+      <h1 class="heading1">How does it work?</h1>
+
+      <p class="subtext">This app works on the assumption that all electricity recharges are split equally among the 4 roommates. No matter who recharges for what amount, as long as it’s divided equally on Splitwise then it should be a fair calculation. <br> <br>
+      Here are the variables used in calculating the function: <br>
+      Total electricity consumed, in units = <span class="highlight">Grid Units Consumed = x </span> <br> 
+      Total electricity consumed, in rupees = <span class="highlight"> Grid Amount Consumed + Total VCAP + Grid Fixed Charges = y </span> <br>
+      Electricity consumed by all rooms, in units = <span class="highlight">Room 1 (a) + Room 2 (b) + Room 3 (c) + Room 4 (d) = e </span> <br>
+      Commonly consumed electricity, in units = <span class="highlight"> y - (a + b + c +d) = e </span> <br>
+      Avg. price of electricity per unit = <span class="highlight"> y / x = z </span> <br> 
+      Here’s the function used to determine consumption per room: <br>
+      Consumption of Room 1, in rupees = <span class="highlight"> (a + e/4) * z </span><br><br>
+      Since the average unit cost of electricity is dynamic, based on consumption slab, we calculate our own unit average every cycle based on total consumption. UPPCL app only gives Grid amount consumed and Grid unit consumed for each historic month (and to date for the current month), hence it is recommended to calculate the bill cycle for whole month(s).</p>
+    </div>
+
+        <div class="contactContainer container">
+      <h1 class="heading1">Say Hello 😎</h1>
+
+      <p class="subtext">Hello residents of Futec A1 902! :) Welcome to the app I crafted during my adventures in learning development. It's like my pet project - except it doesn't need feeding and won't make a mess. I'm planning to keep this app running smoothly even after I've moved out, just like a good neighbour (or a passionate nerd) 🤓 <br>
+      Stumble upon a bug? Have a bright idea to share? Or just want to chat about the weather?️ Feel free to reach out at <span class="highlight">hizaidii@gmail.com</span>.  I'm all ears - metaphorically speaking, of course. <br>
+      Hope your day is as awesome as finding extra fries at the bottom of your Swiggy bag! 🌻</p>
+    </div>
+
+    {{> footer}}
+    <script src="./js/script.js"></script>
+  </body>
+</html>

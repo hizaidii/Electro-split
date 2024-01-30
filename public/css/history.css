@@ -1,0 +1,217 @@
+.historyContainer {
+  width: 1080px;
+  margin: 24px auto;
+}
+
+.visibleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.amountContainer,
+.summaryContainer {
+  width: 50%;
+}
+
+.amount-owed-heading {
+  text-align: end;
+  margin-right: 138px;
+}
+
+.oneSummaryLine {
+  background-color: var(--bg--green);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border: 1px solid #eaf2f2;
+}
+
+.oneSummaryLine p {
+  font-weight: 600;
+}
+
+.simplified-transaction {
+  font-size: 16px;
+  color: var(--neutral800);
+  font-weight: 600;
+}
+
+.show-more-btn,
+.show-less-btn {
+  background: none;
+  border: none;
+  float: right;
+  font-size: 14px;
+  color: var(--primary-green);
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.show-more-btn:hover,
+.show-less-btn:hover {
+  cursor: pointer;
+}
+
+/* HIDDEN CONTAINER */
+/* .hiddenContainer {
+  display: block;
+} */
+
+/* hiding elements by toggling this class */
+.hidden {
+  display: none;
+}
+
+.hiddenContainer hr {
+  margin-top: 24px;
+  margin-bottom: 20px;
+  border-color: var(--neutral100);
+  opacity: 0.3;
+}
+
+.hiddenContainer2 {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.leftContainer,
+.rightContainer {
+  width: 50%;
+}
+
+.show-less {
+  margin-bottom: 24px;
+}
+
+/* badge styling and display */
+.historyContainer {
+  position: relative;
+}
+
+.badge {
+  display: none;
+  background-color: rgb(255, 234, 245);
+  padding: 5px 12px;
+  border-radius: 99em;
+  width: fit-content;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+.badgeText {
+  color: rgb(189, 12, 142);
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.masterContainer > :first-child .badge {
+  display: block;
+}
+
+/* Media queries: */
+
+@media (max-width: 1200px) {
+  .historyContainer {
+    width: 90%;
+    margin: 24px auto;
+  }
+
+  .amountContainer,
+  .summaryContainer,
+  .leftContainer,
+  .rightContainer {
+    width: 50% !important;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}
+
+@media (max-width: 992px) {
+  .hiddenContainer2 {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .leftContainer,
+  .rightContainer {
+    width: 80% !important;
+  }
+
+  .amountInput {
+    width: 160px;
+  }
+
+  .amount-owed-heading {
+    text-align: right;
+    margin-right: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    margin-top: 24px;
+  }
+  .historyContainer {
+    width: 95%;
+    margin: 16px auto;
+  }
+
+  .oneSummaryLine {
+    padding: 10px 12px;
+  }
+
+  .simplified-transaction,
+  .show-more-btn,
+  .show-less-btn {
+    font-size: 14px;
+  }
+
+  .visibleContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .amountContainer,
+  .summaryContainer,
+  .leftContainer,
+  .rightContainer {
+    width: 100% !important;
+  }
+
+  .badge {
+    position: static;
+    margin-bottom: 12px;
+  }
+  .badgeText {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .historyContainer {
+    width: 95%;
+    margin: 12px auto;
+  }
+
+  .show-more-btn,
+  .show-less-btn {
+    font-size: 12px;
+  }
+
+  .badgeText {
+    font-size: 11px;
+  }
+
+  .subtext {
+    margin-bottom: 8px;
+  }
+}

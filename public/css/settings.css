@@ -1,0 +1,123 @@
+.settingsContainer {
+  width: 1080px;
+  margin: 24px auto;
+}
+
+.nameInput {
+  width: 240px;
+  box-sizing: border-box;
+}
+
+.namesInputTitles {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: end;
+    gap: 130px; */
+  justify-content: right;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.names-small-heading {
+  width: 240px !important;
+}
+
+.oneNameInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.submitBtn {
+  width: auto;
+  padding: 12px 20px;
+}
+
+.namesForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.names-small-heading2 {
+  display: none;
+}
+
+/* media query */
+
+@media (max-width: 1200px) {
+  .settingsContainer {
+    width: 90%;
+    margin: 24px auto;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Add styles if needed for this breakpoint */
+}
+
+@media (max-width: 768px) {
+  body {
+    margin-top: 24px;
+  }
+
+  .settingsContainer {
+    width: 95%;
+    margin: 16px auto;
+  }
+
+  .nameInput {
+    width: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .personReadings {
+    width: 100%;
+  }
+
+  .nameInput {
+    /* width: 120px; */
+    width: 100%;
+  }
+  .heading2 {
+    /* margin-bottom: 0; */
+  }
+
+  .names-small-heading {
+    display: none;
+  }
+
+  /* .names-small-heading2 {
+    display: block;
+    margin-bottom: 16px;
+  } */
+
+  .oneNameInput {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .settingsContainer {
+    width: 95%;
+    margin: 12px auto;
+  }
+
+  .saveBtn {
+    width: 80%;
+    padding: 16px;
+  }
+
+  /* .namesForm {
+    width: 100%;
+  } */
+
+  .oneNameInput {
+    margin-bottom: 16px;
+  }
+}

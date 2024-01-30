@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>electro|split</title>
+    <link rel="shortcut icon" href="/Assets/lightning-icon-original.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/settings.css" />
+  </head>
+  <body>
+    {{> navbar}}
+
+    <form class="namesForm" action="/saveNames" method="POST">
+    <div class="settingsContainer container">
+      <div class="title">
+        <h1 class="heading1">Edit roommates’ names</h1>
+        <p class="subtext">Once you’re done editing, click on the Save button. The edited names will only reflect for the current and future billing cycles.</p>
+      </div>
+
+          <div class="namesInputTitles">
+            {{!-- <div class="ghostbox"></div> --}}
+            <h2 class="heading2 names-small-heading">Current Roommate Name</h2>
+            <h2 class="heading2 names-small-heading">New Roommate Name</h2>
+          </div>
+
+      <div class="addNamesInputs">
+            <div class="oneNameInput" >
+              <h2 class="heading2">Room 1 (by the entrance)</h2>
+
+              <div class="person1Readings personReadings">
+                <div class="disabledInput input nameInput"><p class="inputText" id="p1Name">{{currentCycleData.p1name}}</p></div>
+                <input class="cycleInput input nameInput" type="text" name="p1newName" id="p1newName" placeholder="Enter new name" />
+              </div>
+
+            </div>
+
+            <div class="oneNameInput" >
+              <h2 class="heading2">Room 2 (on the right)</h2>
+
+              <div class="person2Readings personReadings">
+                <div class="disabledInput input nameInput"><p class="inputText" id="p2Name">{{currentCycleData.p2name}}</p></div>
+                <input class="cycleInput input nameInput" type="text" name="p2newName" id="p2newName" placeholder="Enter new name" />
+              </div>
+
+            </div>
+
+            <div class="oneNameInput" >
+              <h2 class="heading2">Room 3 (in the middle)</h2>
+
+              <div class="person3Readings personReadings">
+                <div class="disabledInput input nameInput"><p class="inputText" id="p3Name">{{currentCycleData.p3name}}</p></div>
+                <input class="cycleInput input nameInput" type="text" name="p3newName" id="p3newName" placeholder="Enter new name" />
+              </div>
+
+            </div>
+
+            <div class="oneNameInput" >
+              <h2 class="heading2">Room 4 (on the left, master bedroom)</h2>
+
+              <div class="person4Readings personReadings">
+                <div class="disabledInput input nameInput"><p class="inputText" id="p4Name">{{currentCycleData.p4name}}</p></div>
+                <input class="cycleInput input nameInput" type="text" name="p4newName" id="p4newName" placeholder="Enter new name" />
+              </div>
+
+            </div>
+
+          </div>
+
+    </div>
+
+    <button type="submit" class="submitBtn saveBtn">Save</button>
+    </form>
+
+    {{> footer}}
+    <script src="./js/script.js"></script>
+  </body>
+</html>

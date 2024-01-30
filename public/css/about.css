@@ -1,0 +1,61 @@
+.howContainer,
+.contactContainer {
+  width: 1080px;
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+
+.howContainer p,
+.contactContainer p {
+  line-height: 21px;
+}
+
+.highlight {
+  font-weight: 700;
+}
+
+.howContainer {
+  margin-top: 24px;
+}
+
+/* media queries */
+
+@media (max-width: 1200px) {
+  body {
+    margin-top: 24px;
+  }
+
+  .howContainer,
+  .contactContainer {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .highlight {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .howContainer,
+  .contactContainer {
+    width: 95%;
+    margin: 16px auto;
+  }
+
+  .subtext,
+  .highlight {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .howContainer,
+  .contactContainer {
+    width: 95%;
+    margin: 12px auto;
+  }
+}

@@ -1,0 +1,552 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--neutral800);
+  font-size: 14px;
+  font-weight: 400;
+  box-sizing: border-box;
+  /* white-space: nowrap; */
+  /* text-overflow: ellipsis; */
+}
+
+:root {
+  --primary-green: #1a5b5b;
+  --secondary-green: #728f8f;
+  --tertiary-green: #094242;
+  --bg-light-green: #f3f6f6;
+  --bg--green: #f3fafa;
+  --neutral800: #514f52;
+  --neutral700: #737175;
+  --neutral600: #939095;
+  --neutral500: #b2b2b3;
+  --neutral400: #cccccc;
+  --neutral100: #f9f9f9;
+
+  --font-heading: 700 18px Inter, sans-serif;
+  --font-subtext: 400 14px Inter, sans-serif;
+  --font-body: 500 14px Inter, sans-serif;
+  --font-small-heading: 600 14px Inter, sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: var(--bg-light-green);
+  padding-top: 80px;
+}
+
+/* NAV BAR  */
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: white;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+  margin-bottom: 24px;
+
+  border-radius: 0px 0px 12px 12px;
+  /* box-shadow: 0px 4px 80px 0px rgba(0, 0, 0, 0.02); */
+  box-shadow: 0px 4px 20px 0px rgba(10, 46, 28, 0.05);
+}
+
+.logo {
+}
+
+.logo h1 {
+  font-weight: 700;
+  font-size: 21px;
+  color: var(--primary-green);
+}
+
+.logo h6 {
+  /* font: var(--font-body); */
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--secondary-green);
+}
+
+.link {
+  text-decoration: none;
+  color: var(--neutral700);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.link:hover {
+  color: var(--primary-green);
+}
+
+.active-link {
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
+/* INDEX PAGE */
+
+.indexForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: end; */
+  gap: 24px;
+  /* margin: 0 auto; */
+}
+
+.parentContainer {
+  display: flex;
+  flex-direction: row;
+  /* align-items: start; */
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+  /* padding: 0 130px; */
+}
+
+.container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 80px 0px rgba(0, 0, 0, 0.02);
+  padding: 24px;
+  width: 578px;
+}
+
+.heading1 {
+  font: var(--font-heading);
+  color: var(--primary-green);
+  margin-bottom: 8px;
+}
+
+.subtext {
+  font: var(--font-subtext);
+  color: var(--neutral700);
+  margin-bottom: 16px;
+}
+
+.heading2 {
+  font: var(--font-small-heading);
+  color: var(--neutral800);
+  margin-bottom: 12px;
+}
+
+.input {
+  /* height: 42px; */
+  border-radius: 8px;
+  border: 1px solid var(--neutral400);
+  padding: 12px 16px;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  /* outline-color: var(--primary-green); */
+  outline-color: var(--secondary-green);
+}
+
+.disabledInput {
+  background-color: var(--neutral100);
+}
+
+/* specify current date */
+.dateContainer {
+  margin-bottom: 18px;
+}
+
+.bothDates {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dateInput,
+.amountInput,
+.amountInput2 {
+  width: 232px;
+  box-sizing: border-box;
+}
+
+.unitInput {
+  width: 160px;
+  box-sizing: border-box;
+}
+
+/* specify total amount consumed */
+.oneAmountInput {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.amounts-small-heading {
+  text-align: end;
+  margin-right: 60px;
+}
+
+/* specify Individual Units Consumed */
+.unitsInputTitles {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: end;
+    gap: 130px; */
+  gap: 16px;
+}
+
+.units-small-heading {
+  min-width: 160px !important;
+  /* margin-right: 10px; */
+}
+
+.ghostbox {
+  width: 100%;
+}
+
+.oneUnitInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.personReadings {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.grid-units-small-heading {
+  text-align: end;
+  margin-right: 10px;
+}
+
+.total-units-title-container {
+  margin-top: 40px;
+}
+
+/* CTA button */
+.submitBtn {
+  background-color: var(--primary-green);
+  color: white;
+  border-radius: 8px;
+  padding: 12px 16px;
+  border: none;
+  font-weight: 500;
+  width: 168px;
+  /* margin-bottom: 100px; */
+}
+
+.submitBtn:hover {
+  background-color: var(--tertiary-green);
+  cursor: pointer;
+}
+
+/* Footer */
+body {
+  padding-bottom: 60px;
+  position: relative;
+}
+.footer {
+  margin-top: 56px;
+  position: absolute;
+  bottom: 24px;
+  text-align: center;
+  width: 100%;
+}
+
+.footer p {
+  color: var(--neutral500);
+  font-weight: 500;
+}
+
+/* currency symbol styling */
+.currency-wrap {
+  position: relative;
+}
+
+.currency-code {
+  position: absolute;
+  left: 8px;
+  top: 13px;
+  color: var(--neutral600);
+}
+
+.text-currency {
+  padding-left: 20px;
+}
+
+/* bottom nav */
+.bottomNav {
+  display: none;
+}
+
+.units-small-heading2 {
+  display: none;
+}
+
+.dateiPhone {
+  display: block;
+  -webkit-appearance: none;
+  min-height: 42px;
+  background-color: white;
+  text-align: left;
+}
+
+.settingIcon {
+  /* -webkit-appearance: none; */
+  font-family: monospace;
+}
+
+/* ------------- Media Queries ------------- */
+
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 0 40px;
+  }
+
+  .parentContainer {
+    /* align-items: start; */
+  }
+
+  .leftContainer,
+  .unitContainer {
+    width: 45% !important;
+    /* margin: 0 auto; */
+    gap: 16px;
+  }
+
+  .dateContainer,
+  .amountContainer {
+    width: 100% !important;
+    margin: 16px auto;
+    margin-bottom: 0px;
+  }
+
+  .dateContainer {
+    margin-top: 0px;
+  }
+
+  .dateInput {
+    width: 100%;
+  }
+
+  .container {
+    /* width: 100%; */
+    padding: 16px;
+  }
+
+  .logo h1 {
+    font-size: 18px;
+  }
+
+  .logo h6 {
+    font-size: 12px;
+  }
+
+  .link {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 992px) {
+  .parentContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .leftContainer,
+  .unitContainer {
+    width: 80% !important;
+    margin: 0 auto;
+  }
+
+  .dateContainer,
+  .amountContainer {
+    width: 100% !important;
+    margin: 16px auto;
+    margin-bottom: 0px;
+  }
+
+  .heading1 {
+    font-size: 16px;
+  }
+
+  .subtext {
+    font-size: 12px;
+  }
+
+  .indexForm,
+  .oneAmountInput,
+  .oneUnitInput,
+  .personReadings {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    margin-bottom: 80px;
+    padding-top: 60px;
+  }
+
+  .bottomNav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 80px;
+    background-color: white;
+    border-radius: 12px 12px 0px 0px;
+    /* box-shadow: 0px -4px 80px 0px rgba(0, 0, 0, 0.02); */
+    box-shadow: 0px -4px 20px 0px rgba(10, 46, 28, 0.1);
+    z-index: 1;
+  }
+
+  /* .icon {
+    font-size: 24px;
+    text-decoration: none;
+  } */
+
+  .navbar {
+    padding: 0 16px;
+    justify-content: space-around;
+    box-shadow: 0px 4px 20px 0px rgba(10, 46, 28, 0.1);
+  }
+
+  .aboutLink,
+  .settingsLink,
+  .historyLink,
+  .indexLink {
+    display: none;
+  }
+
+  .heading1 {
+    font-size: 16px;
+  }
+  .heading2 {
+    font-size: 14px;
+  }
+
+  .subtext {
+    font-size: 10px;
+  }
+
+  .bothDates {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .bothDates .dateInput,
+  .bothDates .amountInput,
+  .bothDates .amountInput2 {
+    width: 100%;
+  }
+
+  .amountInput,
+  .amountInput2 {
+    width: 120px;
+  }
+
+  .oneUnitInput {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .unitInput {
+    width: 120px;
+  }
+
+  .unitsInputTitles,
+  .personReadings {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .units-small-heading2 {
+    display: block;
+    text-align: start;
+    min-width: 120px;
+    /* margin-right: 10px; */
+    /* margin-right: 10px; */
+  }
+
+  .units-small-heading {
+    display: none;
+  }
+
+  .amounts-small-heading {
+    display: none;
+  }
+
+  .grid-units-small-heading {
+    display: none;
+  }
+
+  .link {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 8px;
+    margin-bottom: 0px;
+  }
+
+  .logo h1 {
+    font-size: 16px;
+  }
+
+  .logo h6 {
+    font-size: 11px;
+  }
+
+  .link {
+    font-size: 14px;
+  }
+
+  .submitBtn {
+    padding: 16px;
+    width: 80%;
+  }
+
+  .leftContainer,
+  .unitContainer {
+    width: 95% !important;
+    margin: 0 auto;
+  }
+
+  .dateContainer,
+  .amountContainer {
+    width: 100% !important;
+    margin: 16px auto;
+    margin-bottom: 0px;
+  }
+
+  .amountContainer {
+    margin-top: 0px;
+  }
+
+  .personReadings,
+  .unitsInputTitles {
+    gap: 12px;
+  }
+}

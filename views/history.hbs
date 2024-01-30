@@ -1,0 +1,257 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>electro|split</title>
+    <link rel="shortcut icon" href="/Assets/lightning-icon-original.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/history.css" />
+
+  </head>
+  <body>
+    {{> navbar}}
+    <div class="masterContainer">
+
+      {{#each historicData as |data|}}
+        {{#unless @first}}
+          <div class="historyContainer container">
+              {{!-- 💥 --}}
+              <div class="badge">
+                <p class="badgeText">🎉 &nbsp;Latest Cycle</p>
+              </div>
+
+            <div class="title historyTitle">
+              <h1 class="heading1">{{formatDate data.startDate}} - {{formatDate data.endDate}}</h1>
+              <p class="subtext">Summary of amount owed, individual and total units consumed etc for this cycle.</p>
+
+
+
+
+
+            </div>
+
+            {{! in future add a delete button to delete using _id }}
+
+            {{! Visible contain by default }}
+            <div class="visibleContainer">
+              {{! left side }}
+              <div class="amountContainer">
+
+                <h2 class="heading2 amount-owed-heading">Amount owed</h2>
+
+                <div class="allAmountInputs">
+
+                  <div class="oneAmountInput">
+                    <h2 class="heading2">{{data.p1name}} gets back</h2>
+                    <div class="currency-wrap">
+                      <span class="currency-code">₹</span>
+                      <div class="disabledInput input amountInput text-currency"><p class="inputText">{{data.p1Owes}}</p></div>
+                    </div>
+                  </div>
+
+                  <div class="oneAmountInput">
+                    <h2 class="heading2">{{data.p2name}} gets back</h2>
+                    <div class="currency-wrap">
+                      <span class="currency-code">₹</span>
+                      <div class="disabledInput input amountInput text-currency"><p class="inputText">{{data.p2Owes}}</p></div>
+                    </div>
+                  </div>
+
+                  <div class="oneAmountInput">
+                    <h2 class="heading2">{{data.p3name}} gets back</h2>
+                    <div class="currency-wrap">
+                      <span class="currency-code">₹</span>
+                      <div class="disabledInput input amountInput text-currency"><p class="inputText">{{data.p3Owes}}</p></div>
+                    </div>
+                  </div>
+
+                  <div class="oneAmountInput">
+                    <h2 class="heading2">{{data.p4name}} gets back</h2>
+                    <div class="currency-wrap">
+                      <span class="currency-code">₹</span>
+                      <div class="disabledInput input amountInput text-currency"><p class="inputText">{{data.p4Owes}}</p></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              {{! right side }}
+              <div class="summaryContainer">
+
+                <div class="title">
+                  {{! <h1 class="heading2">Simplified Transactions</h1> }}
+                  <h1 class="heading1 simplified-transaction">Simplified Transactions</h1>
+                  <p class="subtext">Summary of who owes how much and to whom, for this cycle.</p>
+                </div>
+
+                <div class="allSummaryLines">
+
+                  {{#each data.transactions as |trans|}}
+
+                    <div class="oneSummaryLine">
+                      <p>{{trans}}</p>
+                    </div>
+
+                  {{/each}}
+
+                </div>
+
+                <div class="show-btn-container show-more">
+                  <button class="show-more-btn">Show more</button>
+                </div>
+
+              </div>
+
+            </div>
+
+            {{! hidden area starts here }}
+            <div class="hiddenContainer hidden">
+              <hr />
+
+              <div class="hiddenContainer2">
+                {{! individual units container }}
+                <div class="leftContainer">
+                  <div class="title">
+                    <h1 class="heading1 simplified-transaction">Individual Units Consumed 💡</h1>
+                    <p class="subtext">Units consumed for each room, during this cycle. </p>
+                  </div>
+
+                  <div class="unitsInputTitles">
+                    <div class="ghostbox"></div>
+                    <h2 class="heading2 units-small-heading">Final Meter Reading</h2>
+                    <h2 class="heading2 units-small-heading">Units Consumed</h2>
+                    
+                    <h2 class="heading2 units-small-heading2">Final Reading</h2>
+                    <h2 class="heading2 units-small-heading2">Units Consumed</h2>
+                  </div>
+
+                  <div class="addUnitsInputs">
+                    <div class="oneUnitInput" id="person1">
+                      <h2 class="heading2">{{data.p1name}}</h2>
+
+                      <div class="person1Readings personReadings">
+                        <div class="disabledInput input unitInput"><p class="inputText">{{data.p1FinalMeter}}</p></div>
+                        <div class="disabledInput input unitInput"><p class="inputText">{{data.p1consumption}}</p></div>
+                      </div>
+
+                    </div>
+
+                    <div class="oneUnitInput" id="person2">
+                      <h2 class="heading2">{{data.p2name}}</h2>
+
+                      <div class="person2Readings personReadings">
+                        <div class="disabledInput input unitInput"><p class="inputText">{{data.p2FinalMeter}}</p></div>
+                        <div class="disabledInput input unitInput"><p class="inputText">{{data.p2consumption}}</p></div>
+                      </div>
+
+                    </div>
+
+                    <div class="oneUnitInput" id="person3">
+                      <h2 class="heading2">{{data.p3name}}</h2>
+
+                      <div class="person3Readings personReadings">
+                        <div class="disabledInput input unitInput"><p class="inputText">{{data.p3FinalMeter}}</p></div>
+                        <div class="disabledInput input unitInput"><p class="inputText">{{data.p3consumption}}</p></div>
+                      </div>
+
+                    </div>
+
+                    <div class="oneUnitInput" id="person4">
+                      <h2 class="heading2">{{data.p4name}}</h2>
+
+                      <div class="person4Readings personReadings">
+                        <div class="disabledInput input unitInput"><p class="inputText">{{data.p4FinalMeter}}</p></div>
+                        <div class="disabledInput input unitInput"><p class="inputText">{{data.p4consumption}}</p></div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  {{! Total units consumed }}
+                  <div class="title total-units-title-container">
+                    <h1 class="heading1 simplified-transaction">Total Units Consumed</h1>
+                    <p class="subtext">Grid units consumed during this cycle. </p>
+                  </div>
+
+                  <h2 class="heading2 grid-units-small-heading">Units from UPPCL App</h2>
+                  <div class="oneUnitInput">
+                    <h2 class="heading2">Grid Units Consumed</h2>
+
+                    <div class="personReadings">
+                      <div class="disabledInput input unitInput"><p class="inputText">{{data.gridUnitsConsumed}}</p></div>
+
+                    </div>
+
+                  </div>
+                </div>
+                {{! total amount consumed container }}
+                <div class="rightContainer">
+                  <div class="title">
+                    <h1 class="heading1 simplified-transaction">Total Amount Consumed 💰</h1>
+                    <p class="subtext">Following amounts were incurred during this cycle.</p>
+                  </div>
+
+                  <h2 class="heading2 amounts-small-heading">Amount from UPPCL App</h2>
+                  <div class="allAmountInputs">
+
+                    <div class="oneAmountInput">
+                      <h2 class="heading2">Grid Amount Consumed</h2>
+                      {{!-- <div class="disabledInput input amountInput"><p class="inputText">{{data.gridAmountConsumed}}</p></div> --}}
+
+                      <div class="currency-wrap">
+                        <span class="currency-code">₹</span>
+                        <div class="disabledInput input amountInput text-currency"><p class="inputText">{{data.gridAmountConsumed}}</p></div>
+                      </div>
+                    </div>
+
+                    <div class="oneAmountInput">
+                      <h2 class="heading2">Total VCAP</h2>
+                      {{!-- <div class="disabledInput input amountInput"><p class="inputText">{{data.totalVCAP}}</p></div> --}}
+
+                      <div class="currency-wrap">
+                        <span class="currency-code">₹</span>
+                        <div class="disabledInput input amountInput text-currency"><p class="inputText">{{data.totalVCAP}}</p></div>
+                      </div>
+                    </div>
+
+                    <div class="oneAmountInput">
+                      <h2 class="heading2">Grid Fixed Charges</h2>
+                      {{!-- <div class="disabledInput input amountInput"><p class="inputText">{{data.gridFixedCharges}}</p></div> --}}
+
+                      <div class="currency-wrap">
+                        <span class="currency-code">₹</span>
+                        <div class="disabledInput input amountInput text-currency"><p class="inputText">{{data.gridFixedCharges}}</p></div>
+                      </div>
+                    </div>
+
+                    <div class="oneAmountInput">
+                      <h2 class="heading2">Total Amount Consumed</h2>
+                      {{!-- <div class="disabledInput input amountInput"><p class="inputText">{{data.totalAmt}}</p></div> --}}
+
+                      <div class="currency-wrap">
+                        <span class="currency-code">₹</span>
+                        <div class="disabledInput input amountInput text-currency"><p class="inputText">{{data.totalAmt}}</p></div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+              <div class="show-btn-container show-less">
+                <button class="show-less-btn">Show less</button>
+              </div>
+            </div>
+
+          </div>
+
+        {{/unless}}
+      {{/each}}
+    </div>
+    {{> footer}}
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
