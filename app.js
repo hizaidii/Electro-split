@@ -59,8 +59,20 @@ app.use((req, res, next) => {
 });
 
 // --> Database Connection
-mongoose.connect('mongodb+srv://hizaidii:Welcome123@cluster0.b5btdyc.mongodb.net/?retryWrites=true&w=majority').then(() => {
-  app.listen(PORT, () => {
-    console.log(`http://localhost:` + PORT);
+// mongoose.connect('mongodb+srv://hizaidii:Welcome123@cluster0.b5btdyc.mongodb.net/?retryWrites=true&w=majority').then(() => {
+//   app.listen(PORT, () => {
+//     console.log(`http://localhost:` + PORT);
+//   });
+// });
+mongoose
+  .connect(process.env.DB_URL)
+  .then(() => {
+    console.log("Connected to DB");
+  })
+  .catch((err) => {
+    res.render("error");
   });
+
+app.listen(PORT, () => {
+  console.log(`http://localhost:` + PORT);
 });
