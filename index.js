@@ -70,7 +70,7 @@ mongoose
     console.log("Connected to DB");
   })
   .catch((err) => {
-    res.render("error");
+    console.log(err;
   });
 
 app.listen(PORT, () => {
