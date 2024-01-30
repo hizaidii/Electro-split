@@ -2,11 +2,13 @@
   "name": "electrosplit",
   "version": "1.0.0",
   "description": "personal project of electricity bill splitting app",
-  "main": "index.js",
+  "main": "app.js",
+  "engines": {
+    "node": "16.13.0"
+  },
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-    "dev" : "nodemon app.js"
-    "build" : "npm i"
   },
   "author": "husain zaidi",
   "license": "ISC",
