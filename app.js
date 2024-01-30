@@ -8,7 +8,7 @@ hbs.registerPartials(__dirname + "/views/partials");
 const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo");
 const session = require("express-session");
-const cors = require('cors');
+// const cors = require('cors');
 
 app.set("view engine", "hbs");
 require("dotenv").config();
