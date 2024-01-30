@@ -4,7 +4,7 @@
   "description": "personal project of electricity bill splitting app",
   "main": "app.js",
   "engines": {
-    "node": "20.x"
+    "node": "18.x"
   },
   "scripts": {
     "start": "node app.js",
