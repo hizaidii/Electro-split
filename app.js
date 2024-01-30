@@ -8,6 +8,7 @@ hbs.registerPartials(__dirname + "/views/partials");
 const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo");
 const session = require("express-session");
+const cors = require('cors');
 
 app.set("view engine", "hbs");
 require("dotenv").config();
@@ -16,14 +17,22 @@ require("dotenv").config();
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname, "public")));
-app.use(
-  session({
-    secret: "asdasfasfsarfrasdaed asdasfd",
-    resave: true,
-    saveUninitialized: true,
-    store: MongoStore.create({ mongoUrl: process.env.DB_URL }),
-  })
-);
+// app.use(
+//   session({
+//     secret: "asdasfasfsarfrasdaed asdasfd",
+//     resave: true,
+//     saveUninitialized: true,
+//     store: MongoStore.create({ mongoUrl: process.env.DB_URL }),
+//   })
+// );
+app.use(cors(
+  {
+    origin: ["https://xxxxx.vercel.app"],
+    methods: ["POST, "GET"],
+    credentials: true
+  }
+)};
+  
 
 // --> Routes
 app.get("/", require("./routes/approutes"));
@@ -50,7 +59,7 @@ app.use((req, res, next) => {
 });
 
 // --> Database Connection
-mongoose.connect(process.env.DB_URL).then(() => {
+mongoose.connect('mongodb+srv://hizaidii:Welcome123@cluster0.b5btdyc.mongodb.net/?retryWrites=true&w=majority').then(() => {
   app.listen(PORT, () => {
     console.log(`http://localhost:` + PORT);
   });
