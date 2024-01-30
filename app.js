@@ -25,13 +25,13 @@ app.use(express.static(path.join(__dirname, "public")));
 //     store: MongoStore.create({ mongoUrl: process.env.DB_URL }),
 //   })
 // );
-app.use(cors(
-  {
-    origin: ["https://xxxxx.vercel.app"],
-    methods: ["POST, "GET"],
-    credentials: true
-  }
-)};
+// app.use(cors(
+//   {
+//     origin: ["https://xxxxx.vercel.app"],
+//     methods: ["POST, "GET"],
+//     credentials: true
+//   }
+// )};
   
 
 // --> Routes
