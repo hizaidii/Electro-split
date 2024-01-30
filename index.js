@@ -65,7 +65,7 @@ app.use((req, res, next) => {
 //   });
 // });
 mongoose
-  .connect(process.env.DB_URL)
+  .connect('mongodb+srv://hizaidii:Welcome123@cluster0.b5btdyc.mongodb.net/?retryWrites=true&w=majority')
   .then(() => {
     console.log("Connected to DB");
   })
