@@ -601,28 +601,18 @@ body {
   .heroContainer {
     width: 90%;
     margin: 48px auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
   }
 
   .display {
-    color: var(--primary-green);
     font-size: 36px;
-    font-weight: 700;
   }
 
   .subDisplay {
-    color: var(--primary-green);
     font-size: 18px;
-    font-weight: 600;
   }
 
   .subSubDisplay {
-    color: var(--primary-green);
     font-size: 14px;
-    font-weight: 500;
   }
 
   .CTAcontainer .subtext {
