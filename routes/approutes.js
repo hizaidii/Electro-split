@@ -5,6 +5,7 @@ const router = express.Router();
 const appController = require("../controller/appcontroller");
 
 router.get("/", appController.getIndex);
+router.get("/newCycle", appController.getNewCycle);
 router.post("/addNewCycle", appController.postAddNewCycle);
 
 router.get("/about", appController.getAbout);

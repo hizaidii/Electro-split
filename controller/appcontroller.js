@@ -1,6 +1,7 @@
 const futecCycles = require("../models/cycles");
 const amountOwedFn = require("../public/js/amountOwedFn");
 
+// homepage
 module.exports.getIndex = async (req, res, next) => {
   try {
     let currentCycleData = await futecCycles.findOne().sort({ startDate: -1 });
@@ -11,6 +12,18 @@ module.exports.getIndex = async (req, res, next) => {
   }
 };
 
+// adding new cycle page
+module.exports.getNewCycle = async (req, res, next) => {
+  try {
+    let currentCycleData = await futecCycles.findOne().sort({ startDate: -1 });
+    res.render("newCycle.hbs", { currentCycleData });
+  } catch (err) {
+    console.log(err);
+    res.render("error.hbs");
+  }
+};
+
+//posting request to add new cycle
 module.exports.postAddNewCycle = async (req, res, next) => {
   let { endDate, gridAmountConsumed, totalVCAP, gridFixedCharges, p1FinalMeter, p2FinalMeter, p3FinalMeter, p4FinalMeter, gridUnitsConsumed } = req.body;
 
@@ -73,6 +86,7 @@ module.exports.postAddNewCycle = async (req, res, next) => {
   }
 };
 
+// previous cycles page
 module.exports.getHistory = async (req, res, next) => {
   try {
     let historicData = await futecCycles.find().sort({ startDate: -1 });
@@ -87,15 +101,18 @@ module.exports.getHistory = async (req, res, next) => {
 //     res.render('children.hbs');
 // }
 
+// about page
 module.exports.getAbout = (req, res, next) => {
   res.render("about.hbs");
 };
 
+//settings page
 module.exports.getSettings = async (req, res, next) => {
   let currentCycleData = await futecCycles.findOne().sort({ startDate: -1 });
   res.render("settings.hbs", { currentCycleData });
 };
 
+//post request to update names
 module.exports.postSaveNames = async (req, res, next) => {
   let { p1newName, p2newName, p3newName, p4newName } = req.body;
 

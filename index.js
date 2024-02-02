@@ -11,7 +11,7 @@ const session = require("express-session");
 // const cors = require('cors');
 
 app.set("view engine", "hbs");
-app.set('views', path.join(__dirname, 'views'));
+app.set("views", path.join(__dirname, "views"));
 
 require("dotenv").config();
 
@@ -27,17 +27,10 @@ app.use(express.static(path.join(__dirname, "public")));
 //     store: MongoStore.create({ mongoUrl: process.env.DB_URL }),
 //   })
 // );
-// app.use(cors(
-//   {
-//     origin: ["https://xxxxx.vercel.app"],
-//     methods: ["POST, "GET"],
-//     credentials: true
-//   }
-// )};
-  
 
 // --> Routes
 app.get("/", require("./routes/approutes"));
+app.get("/newCycle", require("./routes/approutes"));
 app.post("/addNewCycle", require("./routes/approutes"));
 app.use("/history", require("./routes/historyroutes")); //middleware for ALL routes starting with /history
 app.get("/about", require("./routes/approutes"));
@@ -67,7 +60,7 @@ app.use((req, res, next) => {
 //   });
 // });
 mongoose
-  .connect('mongodb+srv://hizaidii:Welcome123@cluster0.b5btdyc.mongodb.net/?retryWrites=true&w=majority')
+  .connect("mongodb+srv://hizaidii:Welcome123@cluster0.b5btdyc.mongodb.net/?retryWrites=true&w=majority")
   .then(() => {
     console.log("Connected to DB");
   })
