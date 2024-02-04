@@ -2,14 +2,8 @@ const futecCycles = require("../models/cycles");
 const amountOwedFn = require("../public/js/amountOwedFn");
 
 // homepage
-module.exports.getIndex = async (req, res, next) => {
-  try {
-    let currentCycleData = await futecCycles.findOne().sort({ startDate: -1 });
-    res.render("index.hbs", { currentCycleData });
-  } catch (err) {
-    console.log(err);
-    res.render("error.hbs");
-  }
+module.exports.getIndex = (req, res, next) => {
+  res.render("index.hbs");
 };
 
 // adding new cycle page

@@ -60,9 +60,6 @@ body {
   box-shadow: 0px 4px 20px 0px rgba(10, 46, 28, 0.05);
 }
 
-.logo {
-}
-
 .logo h1 {
   font-weight: 700;
   font-size: 21px;
@@ -311,7 +308,8 @@ body {
 
 .heroContainer {
   /* width: 1080px; */
-  margin: 48px auto;
+  margin: 30px auto;
+  margin-bottom: 16px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -349,15 +347,25 @@ body {
   gap: 24px;
 }
 
+.imgContainer {
+  width: fit-content;
+  margin: 36px auto;
+  margin-bottom: 0px;
+}
+.imgContainer img {
+  /* width: 500px;
+  height: auto; */
+  height: 250px;
+  width: auto;
+}
+
+/* ------------- Media Queries ------------- */
+/* ------------- Media Queries ------------- */
 /* ------------- Media Queries ------------- */
 
 @media (max-width: 1200px) {
   .navbar {
     padding: 0 40px;
-  }
-
-  .parentContainer {
-    /* align-items: start; */
   }
 
   .leftContainer,
@@ -600,7 +608,8 @@ body {
 
   .heroContainer {
     width: 90%;
-    margin: 48px auto;
+    margin: 30px auto;
+    margin-bottom: 0px;
   }
 
   .display {
@@ -626,5 +635,16 @@ body {
 
   .CTAbtn {
     width: 90%;
+  }
+
+  .imgContainer img {
+    width: 280px;
+    height: auto;
+    /* height: 200px;
+    width: auto; */
+  }
+
+  .CTAcontainer {
+    margin-top: 0px;
   }
 }
